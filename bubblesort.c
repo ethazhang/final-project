@@ -12,9 +12,42 @@ How Bubble Sort Works (Step-by-Step)
 */
 #include <stdio.h>
 
-void bubbleSort(double arr[], int size);
+void swap(double *a, double *b)
+{
+  double temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void bubbleSort(double arr[], int size)
+{
+  int sorted;
+  do
+  {
+    sorted = 1;
+    for (int i = 0; i < size - 1; i++)
+    {
+      if (arr[i] > arr[i + 1])
+      {
+        swap(&arr[i], &arr[i + 1]);
+        sorted = 0;
+      }
+    }
+  } while (!sorted);
+}
 
 int main(void)
 {
+  double example_arr[] = {5, 3, 8, 1, 2};
+  int size = 5;
+  bubbleSort(example_arr, size);
+
+  printf("Sorted array:\n");
+  for (int i = 0; i < size; i++)
+  {
+    printf("%lf\n", example_arr[i]);
+  }
+
   return 0;
 }
