@@ -1,3 +1,13 @@
+#include <stdio.h>
+
+void swap(double *a, double *b)
+{
+  double temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
 /*
 a function to sort an array using Bubble Sort. Bubble Sort is a simple and beginner-
 friendly sorting algorithm that repeatedly compares and swaps adjacent elements until the entire
@@ -10,16 +20,6 @@ How Bubble Sort Works (Step-by-Step)
 5. Repeat the process for the remaining unsorted portion of the list.
 6. Continue until no swaps are needed.
 */
-#include <stdio.h>
-
-void swap(double *a, double *b)
-{
-  double temp;
-  temp = *a;
-  *a = *b;
-  *b = temp;
-}
-
 void bubbleSort(double arr[], int size)
 {
   int sorted;
